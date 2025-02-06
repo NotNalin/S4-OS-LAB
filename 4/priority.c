@@ -5,6 +5,7 @@ struct process
 	int ID;
 	int AT;
 	int BT;
+    int PT;
 	int CT;
 	int WT;
 	int TAT;
@@ -18,8 +19,8 @@ void main()
 	struct process pl[num];
 	for (int i = 0; i < num; i++)
 	{
-		printf("Enter ID, AT, BT for process : ");
-		scanf("%d %d %d", &pl[i].ID, &pl[i].AT, &pl[i].BT);
+		printf("Enter ID, AT, BT, Priority for process : ");
+		scanf("%d %d %d %d", &pl[i].ID, &pl[i].AT, &pl[i].BT, &pl[i].PT);
 	}
 	for (int i = 0; i < num - 1; i++)
 	{
@@ -57,7 +58,7 @@ void main()
 			{
 				for (int j = over; j < over + count - 1; j++)
 				{
-					if (pl[j].BT > pl[j + 1].BT)
+					if (pl[j].PT > pl[j + 1].PT)
 					{
 						struct process temp = pl[j];
 						pl[j] = pl[j + 1];
@@ -100,9 +101,9 @@ void main()
 			}
 		}
 	}
-	printf("\nID\tAT\tBT\tWT\tTAT\n");
+	printf("\nID\tAT\tBT\tPT\tWT\tTAT\n");
 	for (int i = 0; i < num; i++)
-		printf("%d\t%d\t%d\t%d\t%d\n", pl[i].ID, pl[i].AT, pl[i].BT, pl[i].WT, pl[i].TAT);
+		printf("%d\t%d\t%d\t%d\t%d\t%d\n", pl[i].ID, pl[i].AT, pl[i].BT, pl[i].PT, pl[i].WT, pl[i].TAT);
 	printf("AWT : %f\n", AWT);
 	printf("ATAT : %f\n", ATAT);
 }
