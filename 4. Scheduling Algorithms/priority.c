@@ -5,7 +5,7 @@ struct process
 	int ID;
 	int AT;
 	int BT;
-    int PT;
+	int PT;
 	int CT;
 	int WT;
 	int TAT;

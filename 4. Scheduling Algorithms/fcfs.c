@@ -4,10 +4,10 @@ struct process
 {
 	int ID;
 	int AT;
-	int BT;	 
-	int CT;	 
-	int WT;	 
-	int TAT; 
+	int BT;
+	int CT;
+	int WT;
+	int TAT;
 };
 void main()
 {
