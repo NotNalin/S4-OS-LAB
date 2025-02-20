@@ -33,6 +33,7 @@ void main()
         printf("Enter memory ID and size : ");
         scanf("%d%d", &bl[i].id, &bl[i].size);
     }
+    printf("Process id\tSize\tBlock id");
     for (int i = 0; i < pno; i++)
     {
         int max = -1;
@@ -40,20 +41,20 @@ void main()
         {
             if (pl[i].size <= bl[j].size)
             {
-            if (max == -1 || bl[j].size > bl[max].size)
-            {
-                max = j;
-            }
+                if (max == -1 || bl[j].size > bl[max].size)
+                {
+                    max = j;
+                }
             }
         }
         if (max != -1)
         {
             bl[max].size -= pl[i].size;
-            printf("P%d : %d -> B%d\n", pl[i].id, pl[i].size, bl[max].id);
+            printf("P%d\t%d\tB%d\n", pl[i].id, pl[i].size, bl[max].id);
         }
         else
         {
-            printf("P%d : %d -> Not Allocated\n", pl[i].id, pl[i].size);
+            printf("P%d\t%d\tNot Allocated\n", pl[i].id, pl[i].size);
         }
     }
 }

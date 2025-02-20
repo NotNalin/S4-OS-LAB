@@ -33,20 +33,21 @@ void main()
         printf("Enter memory ID and size : ");
         scanf("%d%d", &bl[i].id, &bl[i].size);
     }
+    printf("Process id\tSize\tBlock id");
     for (int i = 0; i < pno; i++)
     {
-        int allocated = 0;
+        int allocated = -1;
         for (int j = 0; j < bno; j++)
         {
             if (pl[i].size < bl[j].size)
             {
                 bl[j].size - pl[j].size;
-                printf("P%d : %d -> B%d\n", pl[i].id, pl[i].size, bl[j].id);
+                printf("P%d\t%d\tB%d\n", pl[i].id, pl[i].size, bl[j].id);
                 allocated++;
                 break;
             }
         }
-        if (allocated == 0)
-            printf("P%d : %d -> Not Allocated\n", pl[i].id, pl[i].size);
+        if (allocated == -1)
+            printf("P%d\t%d\tNot Allocated\n", pl[i].id, pl[i].size);
     }
 }
