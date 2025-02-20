@@ -1,32 +1,32 @@
-echo "Enter two numbers"
+echo "Enter Two Numbers"
 read x
 read y
+echo -e "1.Add \n2.Subtract \n3.Multiply \n4.Divide"
 echo "Enter your choice"
-echo -e "1. Add \n2. Subtract \n3. Multiply \n4. Divide"
-read choice
-case $choice in
+read ch
+case $ch in
 1)
-   c=$((x + y))
-   echo "Sum is $c"
-   ;;
+    c=$((x+y))
+    echo "Sum is $c"
+    ;;
 2)
-   c=$((x - y))
-   echo "Difference is $c"
-   ;;
+    c=$((x-y))
+    echo "Difference is $c"
+    ;;
 3)
-   c=$((x * y))
-   echo "Product is $c"
-   ;;
+    c=$((x*y))
+    echo "Product is $c"
+    ;;
 4)
-   if [ $y -ne 0 ]
-   then
-      c=$((x / y))
-      echo "Quotient is $c"
-   else
-      echo "Error: Division by zero is not allowed"
-   fi
-   ;;
+    if [ $y -ne 0 ]
+    then
+        c=$((x/y))
+        echo "Quotient is $c"
+    else
+        echo "Error: Division by 0"
+    fi
+    ;;
 *)
-   echo "Invalid choice"
-   ;;
+    echo "Invalid choice"
+    ;;
 esac

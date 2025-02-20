@@ -1,53 +1,53 @@
-add() 
+add()
 {
-    c=$((x + y))
+    c=$((x+y))
     echo "Sum is $c"
 }
 sub()
 {
-    c=$((x - y))
+    c=$((x-y))
     echo "Difference is $c"
 }
 mul()
 {
-    c=$((x * y))
+    c=$((x*y))
     echo "Product is $c"
 }
 div()
 {
     if [ $y -ne 0 ]
     then
-        c=$((x / y))
+        c=$((x/y))
         echo "Quotient is $c"
     else
-        echo "Error: Division by zero is not allowed"
+        echo "Error: Division by 0"
     fi
 }
-echo "Enter two numbers"
+echo "Enter Two Numbers"
 read x
 read y
-echo "Enter your choice"
-choice=0
-echo -e "1. Add \n2. Subtract \n3. Multiply \n4. Divide \n5. Exit"
-while [ $choice -ne 5 ]
+echo -e "1.Add \n2.Subtract \n3.Multiply \n4.Divide \n5.Exit"
+ch=0
+while [ $ch -ne 5 ]
 do
-    read choice
-    if [ $choice -eq 1 ]
+    echo "Enter choice"
+    read ch
+    if [ $ch -eq 1 ]
     then
         add
-    elif [ $choice -eq 2 ]
+    elif [ $ch -eq 2 ]
     then
         sub
-    elif [ $choice -eq 3 ]
+    elif [ $ch -eq 3 ]
     then
         mul
-    elif [ $choice -eq 4 ]
+    elif [ $ch -eq 4 ]
     then
         div
-    elif [ $choice -eq 5 ]
+    elif [ $ch -eq 5 ]
     then
         break
     else
-        echo "Invalid choice"
+        "Invalid choice"
     fi
 done
