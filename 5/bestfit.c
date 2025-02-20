@@ -41,7 +41,7 @@ void main()
         {
             if (pl[i].size <= bl[j].size)
             {
-                if (min == -1 || bl[j].size < bl[min].size)
+                if (min == -1 || bl[j].size <= bl[min].size)
                 {
                     min = j;
                 }

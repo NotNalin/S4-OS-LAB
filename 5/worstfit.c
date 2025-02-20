@@ -33,7 +33,7 @@ void main()
         printf("Enter memory ID and size : ");
         scanf("%d%d", &bl[i].id, &bl[i].size);
     }
-    printf("\nProcess id\tSize\tBlock id");
+    printf("\nProcess id\tSize\tBlock id\n");
     for (int i = 0; i < pno; i++)
     {
         int max = -1;
@@ -41,7 +41,7 @@ void main()
         {
             if (pl[i].size <= bl[j].size)
             {
-                if (max == -1 || bl[j].size > bl[max].size)
+                if (max == -1 || bl[j].size >= bl[max].size)
                 {
                     max = j;
                 }
