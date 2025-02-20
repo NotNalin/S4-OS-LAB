@@ -72,9 +72,9 @@ void main()
             }
         }
     }
-    printf("\nID\tAT\tBT\tWT\tTAT\n");
+    printf("\nID\tAT\tBT\tCT\tWT\tTAT\n");
     for (int i = 0; i < num; i++)
-        printf("%d\t%d\t%d\t%d\t%d\n", pl[i].ID, pl[i].AT, pl[i].BT, pl[i].WT, pl[i].TAT);
+        printf("%d\t%d\t%d\t%d\t%d\t%d\n", pl[i].ID, pl[i].AT, pl[i].BT, pl[i].CT, pl[i].WT, pl[i].TAT);
     printf("AWT : %f\n", AWT);
     printf("ATAT : %f\n", ATAT);
 }
